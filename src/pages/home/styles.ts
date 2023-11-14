@@ -1,8 +1,8 @@
-import {Platform,StyleSheet} from 'react-native'
+import {StyleSheet} from 'react-native'
 export const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor: '#232323',
+        backgroundColor: '#000000',
         paddingTop: 20,
         paddingHorizontal: 15
     },
@@ -27,7 +27,9 @@ export const styles = StyleSheet.create({
     },
     textBold:{
         color: "#fff",
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        paddingTop: 8,
+        paddingBottom:8
     },    
     lupaUsuario:{
         paddingLeft:210,
@@ -38,5 +40,8 @@ export const styles = StyleSheet.create({
     },
     usuario:{
         marginLeft:20
+    },
+    barraInferiorTexto:{
+        color: "#727272"
     }
 });
