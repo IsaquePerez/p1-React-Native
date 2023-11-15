@@ -5,43 +5,53 @@ export const styles = StyleSheet.create({
         backgroundColor: '#000000',
         paddingTop: 20,        
     },
-    imageLogo: {
-        //tintColor: "#f00",
-        width: 40,
-        height: 40,
-        borderRadius:20
+    navBarTop:{
+        flexDirection:'row', 
+        paddingLeft:10,
+        paddingBottom:5
     },
-    image: {
-        //tintColor: "#f00",
-        width: 150,
-        height: 100,     
-        marginTop: 5,
-        borderRadius: 10
+    imageSeta:{
+        width:20, 
+        height:20, 
+        marginLeft: 10
     },
-    barraInicial:{
-        flexDirection:'row'
+    imageLupa:{
+        width:20, 
+        height:20,         
     },
-    text:{
-        color: "#fff",        
+    lupaInput:{
+        margin:10,
+        flexDirection:'row',
+        backgroundColor:"#1f1f1f",
+        borderRadius:15,
+        padding:7,
+        width:350
     },
-    textBold:{
-        color: "#fff",
+    input:{
+        color:"#fff", 
+        width:300, 
+        height:20, 
+        paddingLeft:5
+    },
+    containerButton:{
+        flexDirection:'row', 
+        marginLeft: 10
+    },
+    button:{
+        fontSize:15,
+        color:"#000000", 
+        fontWeight: 'bold'
+    },
+    buttonCinza:{
+        fontSize:15,
+        color:"#646464", 
         fontWeight: 'bold',
-        paddingTop: 8,
-        paddingBottom:8
-    },    
-    lupaUsuario:{
-        paddingLeft:210,
-        flexDirection:'row'
     },
-    lupa:{
-        paddingTop:10
-    },
-    usuario:{
-        marginLeft:20
-    },
-    barraInferiorTexto:{
-        color: "#727272"
+    categorias:{
+        fontSize:30, 
+        color:"#fff", 
+        fontWeight: 'bold', 
+        marginLeft: 10
     },
     buttonTudo:{
         width:60,

@@ -1,15 +1,15 @@
 import React, {useState} from "react";
-import { View, Text, Image, TouchableOpacity, TextInput,} from "react-native";
+import { View, Text, Image, TouchableOpacity, TextInput, ScrollView} from "react-native";
 import { styles } from "./styles";
-import Categorias from "../../../components/Categorias/ImageCategoria"
+import Categorias from "../../components/Categorias/ImageCategoria"
 import Seta from "../../assets/seta.png"
 import lupa from "../../assets/lupa.png"
 
-export const Category = () =>{
+export const Category = ({navigation}:any) =>{
     
     const [clicarTudo,setClicarTudo] = useState(false)
-    const [clicarAnimes,setClicarAnimes] = useState(false)
-    const [clicarMangas,setClicarMangas] = useState(false)
+    const [clicarAnimes,setClicarAnimes] = useState(true)
+    const [clicarMangas,setClicarMangas] = useState(true)
     
     const clicarButtonTudo = () =>{
         setClicarTudo(!clicarTudo);
@@ -22,39 +22,42 @@ export const Category = () =>{
     }    
     return(
         <View style={styles.container}>
-                <View style={{flexDirection:'row', paddingLeft:10,paddingBottom:5}}>
+                <View style={styles.navBarTop}>
                     <TouchableOpacity style={{paddingTop:15}}>
                         <Image 
                             source={Seta}            
-                            style={{width:20, height:20, marginLeft: 10}}/>
+                            style={styles.imageSeta}/>
                     </TouchableOpacity>
-                    <View style={{margin:10,flexDirection:'row',backgroundColor:"#1f1f1f",borderRadius:15,padding:7,width:350}}>                
+                    <View style={styles.lupaInput}>                                       
                         <Image
                             source={lupa}
-                            style={{width:20, height:20}}
-                        />
+                            style={styles.imageLupa}  
+                                                                                  
+                        />                        
                         <TextInput                                                     
                             placeholder = "O que está procurando?"
                             placeholderTextColor={"#505050"}
-                            style={{color:"#fff", width:300, height:20, paddingLeft:5}}
+                            style={styles.input}
                         />
                     </View>
                 </View>
-            <View style={{flexDirection:'row', marginLeft: 10}}>
-                <TouchableOpacity style={clicarTudo?styles.buttonTudo:styles.buttonTudoWhite} onPress={clicarButtonTudo}>                
-                    <Text style={{fontSize:15,color:"#000000", fontWeight: 'bold'}}>Tudo</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={clicarAnimes?styles.buttonAnimes:styles.buttonAnimesWhite} onPress={clicarButtonAnimes}>
-                    <Text style={{fontSize:15,color:"#646464", fontWeight: 'bold', }}>Animes</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={clicarMangas?styles.buttonMangas:styles.buttonMangásWhite} onPress={clicarButtonMangas}>
-                    <Text style={{fontSize:15,color:"#646464", fontWeight: 'bold',}}>Mangás</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={{margin:10}}>
-                <Text style={{fontSize:30, color:"#fff", fontWeight: 'bold', marginLeft: 10}}>Categorias</Text>
-                <Categorias/>
-            </View>
+            <ScrollView>
+                <View style={styles.containerButton}>
+                    <TouchableOpacity style={clicarTudo?styles.buttonTudo:styles.buttonTudoWhite} onPress={clicarButtonTudo}>                
+                        <Text style={styles.button}>Tudo</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={clicarAnimes?styles.buttonAnimes:styles.buttonAnimesWhite} onPress={clicarButtonAnimes}>
+                        <Text style={styles.buttonCinza}>Animes</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={clicarMangas?styles.buttonMangas:styles.buttonMangásWhite} onPress={clicarButtonMangas}>
+                        <Text style={styles.buttonCinza}>Mangás</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{margin:10}}>
+                    <Text style={styles.categorias}>Categorias</Text>
+                    <Categorias/>
+                </View>
+            </ScrollView>
         </View>
     )
 };

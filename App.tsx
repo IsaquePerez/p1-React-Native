@@ -1,9 +1,9 @@
 import React from "react";
-import {Home} from "./src/pages/home/index"
+import {Routes} from "./src/routes/index"
 
 function App(){
-    return (
-        <Home/>
+    return (                   
+        <Routes/>        
     );
 }
 export default App;

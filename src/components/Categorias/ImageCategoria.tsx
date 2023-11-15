@@ -1,5 +1,6 @@
 import React from "react";
 import { Text,View,FlatList, Image, TouchableOpacity } from "react-native";
+import { styles } from "./styles";
 
 interface IImageComponent {
   imageUrl: string
@@ -60,8 +61,7 @@ const ImageComponent = ({ imageUrl }:IImageComponent) => {
   return (               
       <Image
         source={{ uri: imageUrl }}
-        style={{ width: 90, height: 120, borderRadius: 5,transform: "rotate(30deg)", 
-        position:"absolute",right:0}}          
+        style={styles.cardImage}          
         />       
   );
 };
@@ -73,10 +73,8 @@ const Categorias = () => {
       showsVerticalScrollIndicator={true}
       numColumns={2}
       renderItem={({ item }) => (
-        <TouchableOpacity style={{margin:7, flexDirection:'row', backgroundColor:`${item.cor}` ,
-        justifyContent:"flex-start",borderRadius:10, width:"47%", height:100, position:"relative", 
-        overflow:"hidden"}}>
-          <Text style={{fontSize:18,color:"#fff", paddingTop:35, paddingLeft:12, fontWeight: 'bold',}}>{item.name}</Text>
+        <TouchableOpacity style={{ ...styles.cardCategorias, backgroundColor: item.cor }}>
+          <Text style={styles.cardCategoriasText}>{item.name}</Text>
           <ImageComponent imageUrl={item.imageUrl}/>        
         </TouchableOpacity>
       )}

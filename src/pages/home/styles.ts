@@ -6,12 +6,7 @@ export const styles = StyleSheet.create({
         paddingTop: 20,
         paddingHorizontal: 15
     },
-    imageLogo: {
-        //tintColor: "#f00",
-        width: 40,
-        height: 40,        
-        borderRadius:20
-    },
+    
     image: {
         //tintColor: "#f00",
         width: 150,
@@ -20,28 +15,31 @@ export const styles = StyleSheet.create({
         borderRadius: 10
     },
     barraInicial:{
-        flexDirection:'row'
+        flexDirection:'row',        
     },
     text:{
         color: "#fff",        
     },
     textBold:{
         color: "#fff",
+        fontSize:18,        
         fontWeight: 'bold',
         paddingTop: 8,
         paddingBottom:8
     },    
-    lupaUsuario:{
-        paddingLeft:210,
-        flexDirection:'row'
-    },
-    lupa:{
-        paddingTop:10
-    },
-    usuario:{
-        marginLeft:20
-    },
+    
+    
     barraInferiorTexto:{
         color: "#727272"
+    },
+    navBar:{
+        paddingTop:10,
+        paddingBottom:10,
+        flexDirection:'row',
+        justifyContent:"space-around"
+    },
+    iconeNavBar:{
+        width: 30, 
+        height: 30
     }
 });
